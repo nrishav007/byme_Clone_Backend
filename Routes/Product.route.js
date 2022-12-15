@@ -9,13 +9,13 @@ product.get("/",async(req,res)=>{
 
 product.get("/:type",async(req,res)=>{
     const types=req.params.type;
-    const category=req.query.category;
-    console.log(types,category)
+    const {category,page}=req.query.category;
+    const limit=12;
     if(category){
-        res.send(await ProductModel.find({type:types,category:category}));
+        res.send(await ProductModel.find({type:types,category:category}).limit(limit).skip((page-1)*limit));
     }
     else{
-        res.send(await ProductModel.find({type:types}));
+        res.send(await ProductModel.find({type:types}).limit(limit).skip((page-1)*limit));
     }
 });
 
