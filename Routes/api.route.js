@@ -2,7 +2,10 @@ const express=require("express");
 const API=express.Router();
 const fs=require("fs");
 API.use(express.json());
-
+API.get("/home",(req,res)=>{
+    const data=JSON.parse(fs.readFileSync(`./Resources/home.json`,"utf-8"));
+    res.send(data);
+});
 API.get("/:pat/:id",(req,res)=>{
     const ids=req.params.id;
     const pat=req.params.pat;
