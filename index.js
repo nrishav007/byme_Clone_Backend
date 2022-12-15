@@ -10,7 +10,7 @@ const UserModel = require("./Models/User.model");
 const port=process.env.PORT || 3400;
 const cors=require("cors");
 const user = require("./Routes/User.route");
-const product = require("./Routes/product.route");
+const product = require("./Routes/Product.route");
 app.use(express.json());
 app.use(cors({
   origin:"*"
