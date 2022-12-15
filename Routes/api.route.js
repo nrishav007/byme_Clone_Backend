@@ -1,15 +1,19 @@
 const express=require("express");
 const API=express.Router();
-const home1=require("../Resources/home1.json");
+const fs=require("fs");
 API.use(express.json());
-API.get("/home",(req,res)=>{
-    res.send(homejson);
-});
-API.get("/home/1",(req,res)=>{
-    res.send(op)
-});
 
-
+API.get("/:pat/:id",(req,res)=>{
+    const ids=req.params.id;
+    const pat=req.params.pat;
+    const data=JSON.parse(fs.readFileSync(`./Resources/${pat}.json`,"utf-8"));
+    if(data[ids]==undefined){
+        res.status(404).send({msg:"page not found"});
+    }
+    else{
+        res.send(data[ids]);
+    }
+});
 
 
 

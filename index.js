@@ -8,8 +8,11 @@ const jwt=require("jsonwebtoken");
 const API = require("./Routes/api.route");
 const UserModel = require("./Models/User.model");
 const port=process.env.PORT || 3400;
+const cors=require("cors");
 app.use(express.json());
-
+app.use(cors({
+  origin:"*"
+}));
 app.use("/api",API)
 
 
