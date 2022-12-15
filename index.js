@@ -5,22 +5,24 @@ env.config();
 const database_connection = require("./Configs/DB");
 const bcrypt=require("bcrypt");
 const jwt=require("jsonwebtoken");
-const API = require("./Routes/api.route");
+const API = require("./Routes/Api.route");
 const UserModel = require("./Models/User.model");
 const port=process.env.PORT || 3400;
 const cors=require("cors");
+const user = require("./Routes/User.route");
+const product = require("./Routes/product.route");
 app.use(express.json());
 app.use(cors({
   origin:"*"
 }));
-app.use("/api",API)
-
-
+app.use("/api",API);
+app.use("/user",user);
+app.use("/product",product);
 app.post("/signup", async (req, res) => {
     try {
       let data = await UserModel.find({ email: req.body.email });
       if (data.length > 0) {
-        res.status(409).send({ msg: "User Already Exist" });
+        res.status(200).send({ msg: "User Already Exist" });
       } else {
         bcrypt.hash(req.body.password, 4, async (err, hash) => {
           if (err) {
