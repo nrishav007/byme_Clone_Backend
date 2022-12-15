@@ -20,7 +20,7 @@ app.post("/signup", async (req, res) => {
     try {
       let data = await UserModel.find({ email: req.body.email });
       if (data.length > 0) {
-        res.status(200).send({ msg: "User Already Exist" });
+        res.status(409).send({ msg: "User Already Exist" });
       } else {
         bcrypt.hash(req.body.password, 4, async (err, hash) => {
           if (err) {
