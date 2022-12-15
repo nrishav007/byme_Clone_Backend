@@ -8,6 +8,7 @@ API.get("/home",(req,res)=>{
     res.send(data);
 });
 
+
 API.get("/home/:id",(req,res)=>{
     const ids=req.params.id;
     const pat=req.params.pat;
