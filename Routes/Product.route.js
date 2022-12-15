@@ -10,7 +10,7 @@ product.get("/",async(req,res)=>{
 product.get("/:type",async(req,res)=>{
     const types=req.params.type;
     const {category,page}=req.query;
-    const limit=12;
+    const limit=18;
     if(category){
         res.send(await ProductModel.find({type:types,category:category}).limit(limit).skip((page-1)*limit));
     }
