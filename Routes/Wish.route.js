@@ -20,8 +20,7 @@ wish.get("/", async (req, res) => {
       }
       else{
         await WishModel.create(req.body);
-      console.log(req.body);
-      res.status(200).send({ msg: "Wish Added" });
+      res.status(200).send({ msg: "Product Added to wishlist" });
       }
       
     } catch (e) {
