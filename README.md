@@ -3,27 +3,27 @@ It is the repo of the backend of byme clone website. We use this repo to make th
 https://github.com/nrishav007/longing-carpenter-4207
 # Endpoints
 # Home
-display all data =>/api/home
+display all data =>/api/home<br>
 display particular object =>/api/home/:objectname
 # USER
-user registration => /signup
-user login =>/login
-user read (for admin)=> /user
-user create (for admin)=> /user/create
-user update (for admin)=> /user/update/:id
+user registration => /signup<br>
+user login =>/login<br>
+user read (for admin)=> /user<br>
+user create (for admin)=> /user/create<br>
+user update (for admin)=> /user/update/:id<br>
 user delete (for admin)=> /user/delete/:id
 # PRODUCT
-product read => /product
-product read particular data type(men/women)=>/product/:type
-product read particular data type(men/women) and category=>/product/:type?category=:categoryname&limit=:limit
-product create (for admin)=> /product/create
-product update (for admin)=> /product/update/:id
+product read => /product<br>
+product read particular data type(men/women)=>/product/:type<br>
+product read particular data type(men/women) and category=>/product/:type?category=:categoryname&limit=:limit<br>
+product create (for admin)=> /product/create<br>
+product update (for admin)=> /product/update/:id<br>
 product delete (for admin)=> /product/delete/:id
 # CART
-cart read => /cart
-cart create (for admin)=> /cart/create
-cart delete (for admin)=> /cart/delete/:id
+cart read => /cart<br>
+cart create => /cart/create<br>
+cart delete => /cart/delete/:id
 # WISH
-wish read => /cart
-wish create (for admin)=> /wish/create
-wish delete (for admin)=> /wish/delete/:id
+wish read => /wish<br>
+wish create => /wish/create<br>
+wish delete => /wish/delete/:id
