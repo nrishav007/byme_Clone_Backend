@@ -22,7 +22,7 @@ wish.get("/", async (req, res) => {
     }
   });
   
-  wish.delete("/:userID", async (req, res) => {
+  wish.delete("/delete/:userID", async (req, res) => {
       try {
         const userID = req.params.userID;
         await WishModel.findByIdAndDelete(userID);
