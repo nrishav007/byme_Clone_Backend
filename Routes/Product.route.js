@@ -7,7 +7,7 @@ product.get("/",async(req,res)=>{
     res.send(await ProductModel.find());
 });
 
-product.get("/:id",async(req,res)=>{
+product.get("/single/:id",async(req,res)=>{
   const ids=req.params.id;
   const data=await ProductModel.find({_id:ids});
   res.send(data);
