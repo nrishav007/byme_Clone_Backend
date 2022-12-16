@@ -14,9 +14,16 @@ wish.get("/", async (req, res) => {
   
   wish.post("/create", async (req, res) => {
     try {
-      await WishModel.create(req.body);
+      const data=await WishModel.find({productID:req.body.productID,userID:req.body.userID});
+      if(data.length>0){
+        res.status(200).send({msg:"Product already in wishlist"});
+      }
+      else{
+        await WishModel.create(req.body);
       console.log(req.body);
       res.status(200).send({ msg: "Wish Added" });
+      }
+      
     } catch (e) {
       console.log(e);
       res.status(400).send({ msg: "Not Found" });
