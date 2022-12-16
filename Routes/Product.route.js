@@ -7,6 +7,12 @@ product.get("/",async(req,res)=>{
     res.send(await ProductModel.find());
 });
 
+product.get("/:id",async(req,res)=>{
+  const ids=req.params.id;
+  const data=await ProductModel.find({_id:ids});
+  res.send(data);
+});
+
 product.get("/:type",async(req,res)=>{
     const types=req.params.type;
     const {category,page,limit=18}=req.query;
