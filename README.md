@@ -16,6 +16,7 @@ user delete (for admin)=> /user/delete/:id
 product read => /product<br>
 product read particular data type(men/women)=>/product/:type<br>
 product read particular data type(men/women) and category=>/product/:type?category=:categoryname&limit=:limit<br>
+product disply single data => /product/single/:id<br>
 product create (for admin)=> /product/create<br>
 product update (for admin)=> /product/update/:id<br>
 product delete (for admin)=> /product/delete/:id
