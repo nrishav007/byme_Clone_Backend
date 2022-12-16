@@ -21,8 +21,8 @@ product update (for admin)=> /product/update/:id<br>
 product delete (for admin)=> /product/delete/:id
 # CART
 cart read => /cart<br>
-cart create (for admin)=> /cart/create<br>
-cart delete (for admin)=> /cart/delete/:id
+cart create => /cart/create<br>
+cart delete => /cart/delete/:id
 # WISH
 wish read => /wish<br>
 wish create => /wish/create<br>
