@@ -13,7 +13,7 @@ const user = require("./Routes/User.route");
 const product = require("./Routes/Product.route");
 const wish = require("./Routes/Wish.route");
 const cart = require("./Routes/Cart.route");
-const auth = require("./Middlewares/Auth.middleware");
+const {auth} = require("./Middlewares/Auth.middleware");
 app.use(express.json());
 app.use(cors({
   origin:"*"

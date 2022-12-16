@@ -15,6 +15,7 @@ wish.get("/", async (req, res) => {
   wish.post("/create", async (req, res) => {
     try {
       await WishModel.create(req.body);
+      console.log(req.body);
       res.status(200).send({ msg: "Wish Added" });
     } catch (e) {
       console.log(e);
