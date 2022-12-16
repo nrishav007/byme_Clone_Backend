@@ -24,6 +24,6 @@ cart read => /cart<br>
 cart create (for admin)=> /cart/create<br>
 cart delete (for admin)=> /cart/delete/:id
 # WISH
-wish read => /cart<br>
-wish create (for admin)=> /wish/create<br>
-wish delete (for admin)=> /wish/delete/:id
+wish read => /wish<br>
+wish create => /wish/create<br>
+wish delete => /wish/delete/:id
