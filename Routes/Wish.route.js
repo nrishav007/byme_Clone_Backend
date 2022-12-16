@@ -33,7 +33,7 @@ wish.get("/", async (req, res) => {
       try {
         const userID = req.params.userID;
         await WishModel.findByIdAndDelete(userID);
-        res.status(200).send({ msg: "Wish removed" });
+        res.status(200).send({ msg: "Product removed from wishlist" });
       } catch (e) {
         console.log(e);
         res.status(400).send({ msg: "Not Found" });
