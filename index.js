@@ -33,6 +33,7 @@ app.post("/signup", async (req, res) => {
             res.status(500).send({ msg: "Something went wrong !" });
           }
           req.body.password = hash;
+          req.body.administration=false;
           await UserModel.create(req.body);
           res.status(200).send({ msg: "User registered Successfully" });
         });
