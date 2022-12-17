@@ -62,7 +62,7 @@ app.post("/signup", async (req, res) => {
                 (err, token) => {
                   res
                     .status(200)
-                    .send({ msg: "User login Successfully", token: token,name:data[0].name });
+                    .send({ msg: "User login Successfully", token: token,displayName:data[0].name });
                 }
               );
             }
